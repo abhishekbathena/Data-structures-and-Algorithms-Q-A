@@ -13,30 +13,39 @@ public:
     ListNode* mergeNodes(ListNode* head) {
         if(head==nullptr) return head;
         int ele=0;
-        vector<int>temp;
+        ListNode* dummy=new ListNode();
+        ListNode* ans=dummy;
         ListNode* curr=head;
         while(curr)
         {
             if(curr->val==0 && ele!=0) 
             {
-                temp.push_back(ele);
+                // temp.push_back(ele);
+                // ele=0;
+                ListNode* t=new ListNode(ele);
+                if(dummy==nullptr)
+                {    
+                dummy=t;
+                }
+                else dummy->next=t;
+                dummy=dummy->next;
                 ele=0;
             }
-            else ele+=curr->val;
-            curr=curr->next; 
+        
+                else ele+=curr->val;
+                curr=curr->next; 
         }
-        ListNode* dummy=new ListNode();
-        ListNode* ans=dummy;
-        for(auto a:temp)
-        {
-             ListNode* t=new ListNode(a);
-            if(dummy==nullptr)
-            {    
-            dummy=t;
-            }
-            else dummy->next=t;
-            dummy=dummy->next;
-        }
+     
+        // for(auto a:temp)
+        // {
+        //      ListNode* t=new ListNode(a);
+        //     if(dummy==nullptr)
+        //     {    
+        //     dummy=t;
+        //     }
+        //     else dummy->next=t;
+        //     dummy=dummy->next;
+        // }
         
         return ans->next;
     }

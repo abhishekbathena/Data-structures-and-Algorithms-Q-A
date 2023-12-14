@@ -20,32 +20,15 @@ public:
         {
             if(curr->val==0 && ele!=0) 
             {
-                // temp.push_back(ele);
-                // ele=0;
                 ListNode* t=new ListNode(ele);
-                if(dummy==nullptr)
-                {    
-                dummy=t;
-                }
-                else dummy->next=t;
+                dummy->next=t;
                 dummy=dummy->next;
                 ele=0;
             }
-        
-                else ele+=curr->val;
-                curr=curr->next; 
+            else ele+=curr->val;
+            curr=curr->next; 
         }
      
-        // for(auto a:temp)
-        // {
-        //      ListNode* t=new ListNode(a);
-        //     if(dummy==nullptr)
-        //     {    
-        //     dummy=t;
-        //     }
-        //     else dummy->next=t;
-        //     dummy=dummy->next;
-        // }
         
         return ans->next;
     }

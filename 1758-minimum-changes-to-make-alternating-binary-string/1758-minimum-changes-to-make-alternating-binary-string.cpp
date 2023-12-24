@@ -12,13 +12,13 @@ public:
         {
             if( i % 2 == 0)
             {
-                if(s[i] == '0')oneOnEven += 1;
-                else zeroOnEven += 1;
+                if(s[i] == '0')zeroOnEven += 1;
+                else oneOnEven += 1;
             }
             else
             {
-                if(s[i] == '0') oneOnOdd += 1;
-                else  zeroOnOdd += 1;
+                if(s[i] == '0') zeroOnOdd += 1;
+                else  oneOnOdd += 1;
             }
         }
 

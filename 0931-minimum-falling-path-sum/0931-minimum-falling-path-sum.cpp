@@ -14,11 +14,10 @@ int minFallingPathSum(vector<vector<int>>& matrix) {
     // Build the DP table bottom-up
     for (int row = n - 2; row >= 0; --row) {
         for (int col = 0; col < n; ++col) {
-            int left = (col > 0) ? dp[row + 1][col - 1] : INT_MAX;
-            int middle = dp[row + 1][col];
-            int right = (col < n - 1) ? dp[row + 1][col + 1] : INT_MAX;
-
-            dp[row][col] = matrix[row][col] + min(left, min(middle, right));
+            int left = (col > 0) ?matrix[row][col] + dp[row + 1][col - 1] : INT_MAX;
+            int middle =matrix[row][col] + dp[row + 1][col];
+            int right = (col < n - 1) ? matrix[row][col] + dp[row + 1][col + 1] : INT_MAX;
+            dp[row][col] = min(left, min(middle, right));
         }
     }
 

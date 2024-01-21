@@ -8,14 +8,16 @@ public:
         else
         {
             vector<int>dp(n,0);
-            dp[0]=nums[0];
-            dp[1]=max(nums[0],nums[1]);
+            int sum2=nums[0];
+            int sum1=max(nums[0],nums[1]);
             for(int i=2;i<n;i++)
             {
-                dp[i]=max(dp[i-1],dp[i-2]+nums[i]);
+                int temp=sum1;
+                sum1=max(sum1,sum2+nums[i]);
+                sum2=temp;
             }
             
-            return dp[n-1];
+            return sum1;
         }
     }
 };

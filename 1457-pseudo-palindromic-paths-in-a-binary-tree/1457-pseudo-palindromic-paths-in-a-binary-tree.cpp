@@ -30,7 +30,6 @@ public:
         {
             int checkodds=check(digits);
             digits[root->val]--;
-            
             return (checkodds<=1)?1:0 ;
         }
         

@@ -1,5 +1,4 @@
 
-
 class Solution {
 public:
     int dp[70][70][70];

@@ -3,7 +3,9 @@ public:
     string firstPalindrome(vector<string>& words) {
         for(auto a:words) 
         {
-            if(ispalindrome(a)) return a;
+            string cop=a;
+            reverse(a.begin(),a.end());
+            if(a==cop) return a;
         }
         
         return "";
